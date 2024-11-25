@@ -1,13 +1,49 @@
-//pin defintions
+//pin definitions
 int ENA = 9;
 int ENB = 10;
-int IN1 = 2;
-int IN2 = 3;
-int IN3 = 4;
+int IN1 = 3;
+int IN2 = 4;
+int IN3 = 5;
 int IN4 = 6;
-int IR1 = A0;
-//speed variable
-int speed = 80;
+int IR_left = 2;
+int IR_middle = 5;
+int IR_right = 11;
+//speed-related variables
+int normalspeed = 80;
+int turnspeed = 100;
+int gap = 40;
+
+void sensorOutput() {
+  int left = digitalRead(IR_left);
+  int middle = digitalRead(IR_middle);
+  int right = digitalRead(IR_right);
+
+  //ENA Wheel needs higher speed than ENB wheel to run at the same speed
+  if (left == HIGH && middle == LOW && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, normalspeed);
+  }
+  if (left == HIGH && middle == HIGH && right == LOW) {
+    setMotorSpeed(turnspeed +gap, normalspeed);
+  }
+  if (left == LOW && middle == HIGH && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, turnspeed);
+  }
+  if (left == LOW && middle == HIGH && right == LOW) {
+    setMotorSpeed(normalspeed +gap, turnspeed);
+  }
+  if (left == HIGH && middle == LOW && right == LOW) {
+    setMotorSpeed(turnspeed +gap, normalspeed);
+  }
+  if (left == LOW && middle == LOW && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, turnspeed);
+  }
+  if (left == LOW && middle == LOW && right == LOW) {
+    stopMotors();
+  }
+  if (left == HIGH && middle == HIGH && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, normalspeed);  
+  }
+}
 
 void initializeMotorController() {
     pinMode(ENA, OUTPUT);
@@ -16,65 +52,61 @@ void initializeMotorController() {
     pinMode(IN2, OUTPUT);
     pinMode(IN3, OUTPUT);
     pinMode(IN4, OUTPUT);
-    
+
     digitalWrite(ENA, LOW);
     digitalWrite(ENB, LOW);
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, HIGH);
-    digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, HIGH);
-    pinMode(IR1, INPUT); 
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, LOW);
+
+    pinMode(IR_left, INPUT);
+    pinMode(IR_middle, INPUT); 
+    pinMode(IR_right, INPUT);
 }
-void changeMotorDirection(String direction) {
+
+void motorDirection(String direction) {
     if (direction == "forward") {
         digitalWrite(IN1, HIGH);
         digitalWrite(IN2, LOW);
         digitalWrite(IN3, HIGH);
         digitalWrite(IN4, LOW);
     }
-    else if (direction == "backward") {
+    if (direction == "backward") {
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, HIGH);
         digitalWrite(IN3, LOW);
         digitalWrite(IN4, HIGH);
     }
-    else if (direction == "left") {
+    if (direction == "left") {
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, HIGH);
         digitalWrite(IN3, HIGH);
         digitalWrite(IN4, LOW);
     }
-    else if (direction == "right") {
+    if (direction == "right") {
         digitalWrite(IN1, HIGH);
         digitalWrite(IN2, LOW);
         digitalWrite(IN3, LOW);
         digitalWrite(IN4, HIGH);
     }
 }
- 
-void setMotorSpeed(int speed1, int speed2) {
-    analogWrite(ENA, speed1);
-    analogWrite(ENB, speed2);
+
+void setMotorSpeed(int speedA, int speedB) {
+    analogWrite(ENA, speedA);
+    analogWrite(ENB, speedB);
 }
- 
+
 void stopMotors() {
     digitalWrite(ENA, LOW);
     digitalWrite(ENB, LOW);
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, HIGH);
-    digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, HIGH);
 }
+
 void setup() {
-    initializeMotorController();   
+    initializeMotorController();
+    motorDirection("forward");
 }
+
 void loop() {
-    //ENA motor spins faster than ENB motor
-    setMotorSpeed(speed, speed - 27);
-    changeMotorDirection("forward");
-    if (digitalRead(IR1) == HIGH)
-    {
-      stopMotors();
-      while(true) {}
-    }
+    sensorOutput();
 }
