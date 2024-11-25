@@ -8,6 +8,9 @@ int IN4 = 6;
 int IR_left = 2;
 int IR_middle = 5;
 int IR_right = 11;
+int encoderA = 7;
+int encoderB = 8;
+
 //speed-related variables
 int normalspeed = 80;
 int turnspeed = 100;
