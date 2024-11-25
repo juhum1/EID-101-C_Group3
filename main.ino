@@ -19,26 +19,26 @@ void sensorOutput() {
   int right = digitalRead(IR_right);
 
   //ENA Wheel needs higher speed than ENB wheel to run at the same speed
-  if (left == HIGH && middle == LOW && right == HIGH) {
+  if (left == LOW && middle == LOW && right == LOW) {
+    stopMotors();
+  }
+  if (left == LOW && middle == LOW && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, turnspeed);
+  }
+  if (left == LOW && middle == HIGH && right == LOW) {
     setMotorSpeed(normalspeed +gap, normalspeed);
   }
-  if (left == HIGH && middle == HIGH && right == LOW) {
+  if (left == HIGH && middle == LOW && right == LOW) {
     setMotorSpeed(turnspeed +gap, normalspeed);
   }
   if (left == LOW && middle == HIGH && right == HIGH) {
     setMotorSpeed(normalspeed +gap, turnspeed);
   }
-  if (left == LOW && middle == HIGH && right == LOW) {
-    setMotorSpeed(normalspeed +gap, turnspeed);
+  if (left == HIGH && middle == LOW && right == HIGH) {
+    setMotorSpeed(normalspeed +gap, normalspeed);
   }
-  if (left == HIGH && middle == LOW && right == LOW) {
+  if (left == HIGH && middle == HIGH && right == LOW) {
     setMotorSpeed(turnspeed +gap, normalspeed);
-  }
-  if (left == LOW && middle == LOW && right == HIGH) {
-    setMotorSpeed(normalspeed +gap, turnspeed);
-  }
-  if (left == LOW && middle == LOW && right == LOW) {
-    stopMotors();
   }
   if (left == HIGH && middle == HIGH && right == HIGH) {
     setMotorSpeed(normalspeed +gap, normalspeed);  
