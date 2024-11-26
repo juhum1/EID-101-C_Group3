@@ -8,4 +8,9 @@
 
 4. Thus, the distance per encoder pulse is the distance per revolution / the encoder resolution = ~0.000261m/pulse = ~0.261mm/pulse.
 
-5. To find the pulses in 1 meter, divide 1m/~0.000261m/pulse = ~3831 pulses per meter. 
+5. To find the pulses in 1 meter, divide 1m/~0.000261m/pulse = ~3831 pulses per meter.
+
+### Testing
+In order to check our calculations, we plan on **testing how close the car gets to 1m** when working with the figure we found above and refining it as necessary.
+
+To improve the precision of our car, we can multiply 3831 pulses/meter by the expected distance (1 meter) divided by the measured distance while testing. 
