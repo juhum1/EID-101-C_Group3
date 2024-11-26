@@ -16,6 +16,12 @@ int normalspeed = 80;
 int turnspeed = 100;
 int gap = 40;
 
+//distance-related variables for motion1
+#define TICKS_FOR_1_METER 3831
+#define STOP_DURATION 2000 //2s 
+
+Left_Odom odom; 
+
 void sensorOutput() {
   int left = digitalRead(IR_left);
   int middle = digitalRead(IR_middle);
@@ -105,11 +111,48 @@ void stopMotors() {
     digitalWrite(ENB, LOW);
 }
 
+void drive_distance(int ticks, int direction) {
+    unsigned long count_start = odom.getCount();
+    unsigned long count_current;
+
+    while (abs((count_current = odom.getCount()) - count_start) < ticks) {
+        Serial.print("Current count: ");
+        Serial.println(count_current);
+        if (direction > 0) {
+            motorDirection("forward");
+            setMotorSpeed(normalspeed + gap, normalspeed);
+        } else {
+            motorDirection("backward");
+            setMotorSpeed(normalspeed + gap, normalspeed);
+        }
+    }
+
+    stopMotors();
+}
+
+void perform_task() {
+    for (int i = 0; i < 3; i++) {
+        Serial.println("forward");
+        drive_distance(TICKS_FOR_1_METER, 1);
+
+        Serial.println("stopping");
+        delay(STOP_DURATION);
+
+        Serial.println("backward");
+        drive_distance(TICKS_FOR_1_METER, -1);
+
+        Serial.println("stopping");
+        delay(STOP_DURATION);
+    }
+}
+
 void setup() {
+    Serial.begin(9600);
     initializeMotorController();
-    motorDirection("forward");
+    //motorDirection("forward");
+    perform_task();
 }
 
 void loop() {
-    sensorOutput();
+    //sensorOutput();
 }
