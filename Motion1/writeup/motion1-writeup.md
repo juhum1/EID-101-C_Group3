@@ -13,4 +13,25 @@
 ### Testing
 In order to check our calculations, we plan on **testing how close the car gets to 1m** when working with the figure we found above and refining it as necessary.
 
-To improve the precision of our car, we can multiply 3831 pulses/meter by the expected distance (1 meter) divided by the measured distance while testing. 
+To improve the precision of our car, we can multiply 3831 pulses/meter by the expected distance (1 meter) divided by the measured distance while testing.
+
+### Failure to Complete Motion1
+
+As of 11/27/24, we can't complete the Motion1 task. We believe that the problem is with the odometer outputs, because when running motion1.ino the car moves forward indefinitely. I wrote the following code to test the output of odom.getCount(), but nothing is printed to the serial monitor when we run it: 
+
+```
+#include <rcc.h>
+
+Right_Odom odom;
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    Serial.print("encoder count: ");
+    Serial.println(odom.getCount());
+    delay(500);
+}
+```
+Because of the lack of serial monitor output, I think the issue is hardware-related instead of a problem with the code in motion1.ino, and I plan to prioritize fixing this issue after the break. 

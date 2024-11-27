@@ -40,4 +40,8 @@ Took time in and after class to finish the IR sensor sprint. We figured out that
 Started Motion1 task and began organizing repo. I finished the writeup for Motion1 but want to add pictures/geometry later to better illustrate the calculations. 
 
 **Entry #10 (Nov 26)**
-Finished Motion1 code, but need to test to see how close the car gets to 1m and recalculate so we can adjust the tick count accordingly. 
+Finished Motion1 code, but need to test to see how close the car gets to 1m and recalculate so we can adjust the tick count accordingly.
+We also implemented the LED visual indicator for course completion and took a video for LineFollowing2 in class.
+
+**Entry #11 (Nov 27)**
+Tried debugging motion1.ino and rewiring encoders, but as of right now it still doesn't work (just moves in a straight line instead of stopping after 1m). I think the issue is hardware related (issue with output from odom.getCount()) and plan to revisit this problem after the break. 
