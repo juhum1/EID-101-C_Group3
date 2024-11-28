@@ -1,5 +1,6 @@
 #include <rcc.h>
 
+//pin definitions
 int ENA = 9;
 int ENB = 10;
 int IN1 = 3;
@@ -10,33 +11,37 @@ int IR_left = 2;
 int IR_middle = 5;
 int IR_right = 11;
 int LED = 12;
+
+//speed-related variables
 int normalspeed = 80;
 int turnspeed = 100;
 int gap = 40;
 
-unsigned long time = 0;
+//time-related variables
+unsigned long cur = 0;
+unsigned long prev = 0;
+
 
 void sensorOutput() {
   int left = digitalRead(IR_left);
-  //int mleft = digitalRead(IR_mleft);
   int middle = digitalRead(IR_middle);
-  //int mright = digitalRead(IR_mright);
   int right = digitalRead(IR_right);
+  digitalWrite(LED, LOW);
 
   //ENA Wheel needs higher speed than ENB wheel to run at the same speed
-  
   if (left == LOW && middle == LOW && right == LOW) {
-    time = 0;
-    time = millis();
-    if (time > 2000) {
+  //if all sensors low for 2 seconds, LED will be set to HIGH
+    cur = micros();
+    if ((cur - prev) > 2000) {
       digitalWrite(LED, HIGH);
     }
+    prev = cur;
     stopMotors();
   }
   if (left == LOW && middle == LOW && right == HIGH) {
     setMotorSpeed(normalspeed +gap, turnspeed);
   }
-    if (left == LOW && middle == HIGH && right == LOW) {
+  if (left == LOW && middle == HIGH && right == LOW) {
     setMotorSpeed(normalspeed +gap, normalspeed);
   }
   if (left == HIGH && middle == LOW && right == LOW) {
@@ -76,6 +81,7 @@ void initializeMotorController() {
     pinMode(IR_right, INPUT);
 
     pinMode(LED, OUTPUT);
+    digitalWrite(LED, LOW);
 }
 
 void motorDirection(String direction) {
@@ -121,6 +127,5 @@ void setup() {
 }
 
 void loop() {
-    digitalWrite(LED, LOW);
     sensorOutput();
 }
