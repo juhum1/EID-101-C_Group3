@@ -26,4 +26,9 @@ Worked on the line following sprint. Accounted for difference in speed of ENA wh
 Created github repository with branches main, devel, and hotfix. Updated it with past work involving the LED firmware task, the IR sensor integration task, and the line detection sprint.
 
 ### <u> Entry #8</u> (Tuesday, November 26)
+Completed LineFollowing2 task. <br>
 Implemented an LED as our visual indicator of finishing the line maze by having the LED set to HIGH after 2 seconds of all 3 IR sensors detecting LOW. Updated state machine diagram.
+
+### <u> Entry #9</u> (Wednesday, November 27)
+ Completed Motion3 task for YourChoice1. <br>
+ Used the code given in non-blocking.ino in the rcc library for the HC-SR04 ultrasonic distance sensor. At first, the car wouldn't stop but the problem was fixed after adjusting the placement of the sensor. As the car moved, the sensor fell to the left side of the car, causing it to detect objects like my laptop and a roll of tape. After it was moved to the center, it detected distance properly. The speed also had to be lowered to have the car stop closer to the 30 cm goal.
