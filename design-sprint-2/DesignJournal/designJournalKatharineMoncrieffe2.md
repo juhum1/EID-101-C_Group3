@@ -44,4 +44,10 @@ Finished Motion1 code, but need to test to see how close the car gets to 1m and 
 We also implemented the LED visual indicator for course completion and took a video for LineFollowing2 in class.
 
 **Entry #11 (Nov 27)**
-Tried debugging motion1.ino and rewiring encoders, but as of right now it still doesn't work (just moves in a straight line instead of stopping after 1m). I think the issue is hardware related (issue with output from odom.getCount()) and plan to revisit this problem after the break. 
+Tried debugging motion1.ino and rewiring encoders, but as of right now it still doesn't work (just moves in a straight line instead of stopping after 1m). I think the issue is hardware related (issue with output from odom.getCount()) and plan to revisit this problem after the break.
+
+**Entry #12 (Dec 5)**
+We integrated the 3d printed and laser cut parts into the car and rewired it. We also made plans for how to divide the remaining tasks before the final project is due. 
+
+**Entry #14 (Dec 10)**
+Finished management task 1 (subproblem definitions and decision matrices) and committed it. 
