@@ -31,10 +31,10 @@ Worked on implementing wall sensing. Had issues with the sensitivity of the sens
 
 **Entry #7 (Nov 20)**
 
-Finished the initial sensor integration assignment and edited our work for the IR sensor sprint. Noticed that the motors run at different speeds, so the car doesn’t always follow the line; we plan on fixing this in class tomorrow.  
+Finished the initial sensor integration assignment and edited our work for the IR sensor sprint. We met as a group to discuss the sensor configuration and selection of sensors, and we decided on using 5 IR sensors as well as the ultrasonic and lidar sensors. Noticed that the motors run at different speeds, so the car doesn’t always follow the line; we plan on fixing this in class tomorrow.  
 
 **Entry #8 (Nov 21)**
-Took time in and after class to finish the IR sensor sprint. We figured out that the main issue wasn’t in the code or the motors but instead in the sensor placement, and we plan on adjusting our design accordingly for the next assignment and for the CAD/sketch. 
+Took time in and after class to finish the IR sensor sprint. We figured out that the main issue wasn’t in the code or the motors but instead in the sensor placement, and we plan on adjusting our design accordingly for the next assignment and for the CAD/sketch.
 
 **Entry #9 (Nov 25)**
 Started Motion1 task and began organizing repo. I finished the writeup for Motion1 but want to add pictures/geometry later to better illustrate the calculations. 
