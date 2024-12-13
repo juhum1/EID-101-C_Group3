@@ -1,17 +1,21 @@
 ### Group 3 Cumulative Report (Julie Hum, Luke McConnell, Katharine Moncrieffe)
 
 ## Mechanical
+In completing the mechanical design tasks, we encountered problems with ensuring that the designed parts were able to effectively be integrated into the rest of our car while keeping us within the dimensional constraints of the car overall. For example, we had to take into consideration the number of sensors and how they should be spaced when designing our sensor matrix. 
 
 ## Electrical 
 
 ## Motion
 
 ## Line Following
-We finished line following task B as part of the 2 required design sprints. Although there were challenges with completing our intitial line following sprint where we followed a straight line, they were mainly hardware related, and were solved by moving the sensors to be closer to the line, because we noticed that the sensors were picking up the light reflected off our ball caster and other parts outside of the course itself. After our initial line following sprint, an issue with our truth table for our sensor array became clear; our car was turning in the opposite direction of the line. After fixing our truth table and sensor logic, we were able to complete line following task B with minimal other changes or improvements. 
+We finished line following task B as part of the 2 required design sprints. Although there were challenges with completing our intitial line following sprint where we followed a straight line, they were mainly hardware related, and were solved by moving the sensors to be closer to the line, because we noticed that the sensors were picking up the light reflected off our ball caster and other parts outside of the course itself. After our initial line following sprint, we began testing our code on course B, but our car was turning in the opposite direction of the line. We determined that this was an issue with our sensor logic,and after fixing that by revisiting our truth table, we were able to complete line following task B with minimal other changes or improvements. 
 
-We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to use a mini breadboard for the LED, because that was small enough to fit on the chassis with everything else. 
+We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to use a mini breadboard for the LED, because that was small enough to fit on the chassis with everything else.
+
+For line following task A, we 
 
 ## Programming
+
 
 
 ## Management
