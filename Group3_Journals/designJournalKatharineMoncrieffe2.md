@@ -50,4 +50,7 @@ Tried debugging motion1.ino and rewiring encoders, but as of right now it still 
 We integrated the 3d printed and laser cut parts into the car and rewired it. We also made plans for how to divide the remaining tasks before the final project is due. 
 
 **Entry #14 (Dec 10)**
-Finished management task 1 (subproblem definitions and decision matrices) and committed it. 
+Finished management task 1 (subproblem definitions and decision matrices) and committed it.
+
+**Entry #15 (Dec 13)**
+Finished writing and testing the sensor array library and wrote the relevant documentation. Updated the directory structure in our repo to include a Group3_Programming subdirectory with the library task. 
