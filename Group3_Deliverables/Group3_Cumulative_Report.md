@@ -1,7 +1,7 @@
 ### Group 3 Cumulative Report (Julie Hum, Luke McConnell, Katharine Moncrieffe)
 
 ## Mechanical
-In completing the mechanical design tasks, we encountered problems with ensuring that the designed parts were able to effectively be integrated into the rest of our car while keeping us within the dimensional constraints of the car overall. For example, we had to take into consideration the number of sensors and how they should be spaced when designing our sensor matrix. 
+For the mechanical design tasks, we started with a quickly assembled cardboard chassis onto which all of the components were screwed in place. This chassis had a few problems: it placed the Arduino’s USB port in an inconvenient place, it was too back-heavy and too small to accommodate all of the necessary sensors. It was also flimsy and aesthetically unappealing. We used these flaws we noticed while working with the initial chassis to come up with a more refined design which comprises an acrylic laser-cut chassis and a 3D-printed mount for the motors and sensors. We used OnShape and AutoCAD to create the necessary CAD files. Even after the laser cut chassis was completed, we ran into issues with sizing, as the body of the robot was just slightly too big, which required us to redo the laser cut with a modified design.
 
 ## Electrical 
 
