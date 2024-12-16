@@ -1,24 +1,43 @@
 ### Group 3 Cumulative Report (Julie Hum, Luke McConnell, Katharine Moncrieffe)
 
+
 ## Mechanical
 In completing the mechanical design tasks, we encountered problems with ensuring that the designed parts were able to effectively be integrated into the rest of our car while keeping us within the dimensional constraints of the car overall. For example, we had to take into consideration the number of sensors and how they should be spaced when designing our sensor matrix. 
 
+
 ## Electrical 
 
+
+
 ## Motion
+#### Motion 1
+
+
+#### Motion 2
+
+
+#### Motion 3
+We completed Motion 3 by utilizing the code in the rcc library for the HC-SR04 ultrasonic distance sensor. We had problems involving placement of the sensor, as we did not have a mount for it to stay still as the car went forward. We left it to hang in front of the car, which worked because the car was only moving forward. We also adjusted the speed to have the car stop closer to the 30 cm goal, which was portrayed with strips of black tape 30 cm apart and a 15 cm ruler in between.
+
 
 ## Line Following
+#### Line Following task A
+
+
+#### Line Following task B 
 We finished line following task B as part of the 2 required design sprints. Although there were challenges with completing our intitial line following sprint where we followed a straight line, they were mainly hardware related, and were solved by moving the sensors to be closer to the line, because we noticed that the sensors were picking up the light reflected off our ball caster and other parts outside of the course itself. After our initial line following sprint, we began testing our code on course B, but our car was turning in the opposite direction of the line. We determined that this was an issue with our sensor logic,and after fixing that by revisiting our truth table, we were able to complete line following task B with minimal other changes or improvements. 
 
-We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to use a mini breadboard for the LED, because that was small enough to fit on the chassis with everything else.
+We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to use a mini breadboard for the LED, because that was small enough to fit on the chassis with everything else. We had the LED visual indicator work by having the LED set to HIGH after all the sensors detected LOW.
 
-For line following task A, we 
 
 ## Programming
 
 
 
 ## Management
+
+
+
 Sub-problems: selecting sensor setup and designing speed control
 
 For each of our sub-problems, we met as a group to discuss what our options were and what would be the best choice given the constraints on the size of the car and the difficulty of implementation, among other criteria. Initially it was difficult to think of enough options for each subproblem, which was problematic for the sensor selection subproblem in particular because using too many sensors can cause problems for the design of our sensor array and might make our car larger than the specified dimensions, but eventually we were able to find other options through research and comparing our car to online examples. 
