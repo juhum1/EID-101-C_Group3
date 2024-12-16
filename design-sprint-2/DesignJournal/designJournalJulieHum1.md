@@ -32,3 +32,9 @@ Implemented an LED as our visual indicator of finishing the line maze by having 
 ### <u> Entry #9</u> (Wednesday, November 27)
  Completed Motion3 task for YourChoice1. <br>
  Used the code given in non-blocking.ino in the rcc library for the HC-SR04 ultrasonic distance sensor. At first, the car wouldn't stop but the problem was fixed after adjusting the placement of the sensor. As the car moved, the sensor fell to the left side of the car, causing it to detect objects like my laptop and a roll of tape. After it was moved to the center, it detected distance properly. The speed also had to be lowered to have the car stop closer to the 30 cm goal.
+
+### <u> Entry #10</u> (Thursday, December 12)
+Worked on Motion2 and tried to complete it using the MPU6050. However, problems with the motor were encountered (wasn't moving), so it was switched out for a new one. 
+
+### <u> Entry #10</u> (Friday, December 12)
+A new motor controller was implemented. MPU6050 was only recording angles of 0 — still unknown what the problem is.
