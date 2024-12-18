@@ -53,4 +53,7 @@ We integrated the 3d printed and laser cut parts into the car and rewired it. We
 Finished management task 1 (subproblem definitions and decision matrices) and committed it.
 
 **Entry #15 (Dec 13)**
-Finished writing and testing the sensor array library and wrote the relevant documentation. Updated the directory structure in our repo to include a Group3_Programming subdirectory with the library task. 
+Finished writing and testing the sensor array library and wrote the relevant documentation. Updated the directory structure in our repo to include a Group3_Programming subdirectory with the library task.
+
+**Entry #16 (Dec 18)**
+Added state function descriptions to cumulative report and reorganized directory structure to fit requirements. 
