@@ -3,17 +3,19 @@
 ## Mechanical
 For the mechanical design tasks, we started with a quickly assembled cardboard chassis onto which all of the components were screwed in place. This chassis had a few problems: it placed the Arduino’s USB port in an inconvenient place, it was too back-heavy and too small to accommodate all of the necessary sensors. It was also flimsy and aesthetically unappealing. We used these flaws we noticed while working with the initial chassis to come up with a more refined design which comprises an acrylic laser-cut chassis and a 3D-printed mount for the motors and sensors. We used OnShape and AutoCAD to create the necessary CAD files. Even after the laser cut chassis was completed, we ran into issues with sizing, as the body of the robot was just slightly too big, which required us to redo the laser cut with a modified design.
 
-## Electrical 
+## Electrical
+Using the schematic as a guide, we aimed to make our wiring as neat as possible to improve the ease of debugging for later tasks. We tried to group together the wires for the sensors, which each have ground, power and signal wires, and the wires for the enablers and input pins of the motor controller, because those were relatively simple to follow. We taped the wires together to keep them out of the way so it was easier to focus on everything else. It was difficult to figure out which pins were appropriate to use for what purpose; for example, we ran into issues trying to use certain pins for the sensors or for the IMU because the readings would be different from what we expected. However, after we figured that out, the wiring wasn't too bad. 
 
 ## Motion
+For motion 2, we used the IMU to control the turning (yaw) angle of the car. We wrote a rotate() function to make the car turn to a specified angle, and our loop() is intended to turn the car 90 degrees and back in both the clockwise and counterclockwise directions. In completing this task, an issue that we ran into was with our motor, because some of the teeth of the motor were broken and causing turns to come out differently than expected. We figured out that the motor was spinning faster on one side, and this was confirmed when we opened it up to look inside and saw the teeth broken. We eventually replaced the motor using an unbroken one from 725. 
 
 
 ## Line Following
 We finished line following task B as part of the 2 required design sprints. Although there were challenges with completing our initial line following sprint where we followed a straight line, they were mainly hardware-related, and were solved by moving the sensors closer to the line, since we noticed that the sensors were picking up the light reflected off our ball caster and other parts outside of the course itself. After our initial line following sprint, we began testing our code on course B, but our car was turning in the opposite direction of the line. We determined that this was an issue with our sensor logic, so after fixing that by revisiting our truth table, we were able to complete line following task B with minimal other changes or improvements.
 
-We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to use a mini breadboard for the LED, because that was small enough to fit on the chassis with everything else.
+We also had to implement an LED visual indicator for course completion. We were concerned that it wouldn't fit on the car, because we knew that the actual wiring wasn't a problem but there wasn't space for a full-sized breadboard on our chassis with the Arduino and all the wires coming off it. We eventually chose to solder an LED to one of the wires on the car, because then we wouldn't have to make space for a breadboard or remove the LED circuit when it's no longer necessary. 
 
-For line following task A, we  
+For line following task A, we
 
 ## Programming
 Programming 1. In designing and writing our library, our first challenge was determining which functions were relevant and deserved to be included. We decided to have fields corresponding to the number of sensors and the pins that each sensor was connected to, which would be helpful in the event that someone had multiple sensor arrays and wanted to make multiple instances of our library. We decided that there should be a constructor to populate the fields of each instance as well as functions to control turning the pinModes of the sensor pins to INPUT, updating the array, and printing values from it. 
@@ -32,4 +34,4 @@ This is reflected in our design journals from November 20 and November 25, which
 
 2. Our proposed Gaant Chart was much simpler than what happened in reality, because we didn't expect how much work would get done in the design sprints and how many tasks "went together" - for example, designing and CADing the sensor array was much easier after the chassis was completed because those two parts are intended to go together. In the end, our actual work timeline diverged significantly from our proposed one. 
 
-3. Our BOM was similar to the one we showed in our Midterm Presentation because we chose not to use our budget on outside parts, but we chose not to use the micro servos. 
+3. Our BOM was similar to the one we showed in our Midterm Presentation because we chose not to use our budget on outside parts. 
