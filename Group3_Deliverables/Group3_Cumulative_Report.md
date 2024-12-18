@@ -32,6 +32,6 @@ For each of our sub-problems, we met as a group to discuss what our options were
 
 This is reflected in our design journals from November 20 and November 25, which state, "We met as a group to discuss the sensor configuration and selection of sensors, and we decided on using 5 IR sensors as well as the ultrasonic and lidar sensors." and "We discussed how to tackle speed control as a group, and decided on using one encoder based on our design matrix for this subproblem."
 
-2. Our proposed Gaant Chart was much simpler than what happened in reality, because we didn't expect how much work would get done in the design sprints and how many tasks "went together" - for example, designing and CADing the sensor array was much easier after the chassis was completed because those two parts are intended to go together. In the end, our actual work timeline diverged significantly from our proposed one. 
+2. Our proposed Gaant Chart was very different compared to what happened in reality, because we didn't expect how much work would get done in the design sprints and how many tasks "went together" - for example, designing and CADing the sensor array was much easier after the chassis was completed because those two parts are intended to go together. In the end, our actual work timeline diverged significantly from our proposed one. 
 
 3. Our BOM was similar to the one we showed in our Midterm Presentation because we chose not to use our budget on outside parts. 
