@@ -34,4 +34,7 @@ void loop() {
     delay(500);
 }
 ```
-Because of the lack of serial monitor output, I think the issue is hardware-related instead of a problem with the code in motion1.ino, and I plan to prioritize fixing this issue after the break. 
+Because of the lack of serial monitor output, I think the issue is hardware-related instead of a problem with the code in motion1.ino, and I plan to prioritize fixing this issue after the break.
+
+### Motion1 Update: Car runs in a circle
+Because our motors have a problem with running in a straight line, our car moves in a circle when we run the motion1 code. We noticed that one motor runs really fast and can't be set lower, while the other motor never matches the speed of the first regardless of how high we set the PWM. We think that the issue might be with the motor controller or the motors themselves, but we couldn't fix it in time for the final submission. However, we can tell that our logic is correct because it moves the same distance each time, which indicates that the motors are the only problem. 
