@@ -1,6 +1,8 @@
 ### Group 3 Cumulative Report (Julie Hum, Luke McConnell, Katharine Moncrieffe)
 Link to GitHub repo: https://github.com/juhum1/EID-101-C_Group3/
 
+Note: Our motor controller was only able to output 0 or 8 volts (tested with oscilloscopes on the 6th floor), which caused problems with multiple tasks because the motors were unable to run at the same speed. 
+
 ## Mechanical
 For the mechanical design tasks, we started with a quickly assembled cardboard chassis onto which all of the components were screwed in place. This chassis had a few problems: it placed the Arduino’s USB port in an inconvenient place, it was too back-heavy and too small to accommodate all of the necessary sensors. It was also flimsy and aesthetically unappealing. We used these flaws we noticed while working with the initial chassis to come up with a more refined design which comprises an acrylic laser-cut chassis and a 3D-printed mount for the motors and sensors. We used OnShape and AutoCAD to create the necessary CAD files. Even after the laser cut chassis was completed, we ran into issues with sizing, as the body of the robot was just slightly too big, which required us to redo the laser cut with a modified design.
 
