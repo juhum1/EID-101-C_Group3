@@ -32,9 +32,8 @@ The `stopMotors()` function stops the motors by setting `ENA` and `ENB` to LOW.
 2. **IMU Data Integration**:
    - The IMU's angular velocity (`getAngVelZ()`) is used to calculate the current angle.
    - Angular velocity is multiplied by the time passed (`time_passed`) to get the incremental rotation:
-     
-     \[ \text{angle increment} = \text{angular velocity} \times \text{time passed} \]
-
+        **Angle increment = angular velocity * time passed**
+    
    - The result is scaled by `direction_num` to handle positive (CW) or negative (CCW) rotation. CW rotation adds to the angle, while CCW subtracts from it.
 
 
@@ -48,16 +47,14 @@ The `stopMotors()` function stops the motors by setting `ENA` and `ENB` to LOW.
    - When the `current_angle` reaches or exceeds the `desired_angle`, the motors are stopped using `stopMotors()`.
 
 ### Angular Velocity to Angle Conversion
-The angular velocity is provided by the IMU in degrees per second (\( \text{\( \omega \)} \)). By integrating this value over time, the angle (\( \theta \)) is calculated:
+The angular velocity is provided by the IMU in degrees per second (omega). By integrating this value over time, the angle (theta) is calculated:
 
-\[ \Delta \theta = \omega \times \Delta t \]
-
+** delta theta = omega * delta t**
 Here:
-- \( \Delta \theta \): Incremental angle change.
-- \( \omega \): Angular velocity (degrees/second).
-- \( \Delta t \): Time passed (seconds).
+- delta theta: Incremental angle change.
+- omega: Angular velocity (degrees/second).
+- delta t: Time passed (seconds).
 
 The cumulative angle is updated as:
 
-\[ \text{current\_angle} += \Delta \theta \times \text{direction\_num} \]
-
+** current angle = delta theta * direction_num**
